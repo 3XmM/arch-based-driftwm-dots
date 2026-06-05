@@ -1,0 +1,45 @@
+{
+    "$schema": "https://github.com",
+    "logo": {
+        "type": "file",
+        "source": "~/.config/fastfetch/my_art.txt",
+        "padding": {
+            "top": 0,
+            "left": 4,
+            "right": 4
+        }
+    },
+    "display": {
+        "separator": "    ",
+        "key": {
+            "width": 16 // Чуть увеличили ширину для длинных кибер-названий
+        },
+        "color": {
+            "keys": "31",
+            "title": "91",
+            "output": "38;5;197"
+        }
+    },
+    "modules": [
+        "break", 
+        "title",
+        {
+            "type": "custom",
+            "format": "─────────────────────────────────",
+            "outputColor": "31"
+        },
+        { "type": "os", "key": "    neural-net" },       // Вместо OS — Нейросеть
+        { "type": "kernel", "key": "    cyber-core" },   // Вместо ядра — Кибер-ядро
+        { "type": "uptime", "key": "    link-time" },    // Время сессии подключения
+        { "type": "packages", "key": "    sub-routines" },// Пакеты как подпрограммы
+        { "type": "wm", "key": "    matrix-ui" },   // Оконный менеджер как интерфейс матрицы
+        { "type": "terminal", "key": "    deck-shell" },  // Терминал как оболочка деки
+        { "type": "memory", "key": "    ram-buffer" },  // Оперативка как буфер памяти
+        {
+            "type": "custom",
+            "format": "─────────────────────────────────",
+            "outputColor": "31"
+        }
+    ]
+}
+

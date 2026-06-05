@@ -1,0 +1,69 @@
+sync_to_monitor no
+
+# Снижает частоту обновления экрана терминала (разгружает процессор)
+repaint_delay 20
+
+# Увеличивает задержку перед обработкой ввода (снижает лаги при вводе текста)
+input_delay 5
+
+
+# Строго 13.0, иначе пиксели поплывут!
+font_size        16
+
+# --- Прозрачность и базовый тон фона ---
+background_opacity         0.50
+dynamic_background_opacity yes
+background                 #100005
+
+# --- Основной текст и курсор (Яркий неоново-бордовый) ---
+foreground                 #ff3366
+cursor                     #ff3366
+cursor_text_color          #100005
+
+# --- Выделение текста ---
+selection_background       #80002a
+selection_foreground       #ffffff
+
+# --- ИСПРАВЛЕННАЯ СУПЕР-ЯРКАЯ ПАЛИТРА ANSI ДЛЯ KITTY ---
+
+# Черный / Темные подложки
+color0  #25000a
+color8  #400012
+
+# Красный / Бордовый (ВОТ ТУТ МЫ ВЫКРУТИЛИ НЕОН ДЛЯ FASTFETCH НА МАКСИМУМ)
+color1  #ff0055
+color9  #ff3377
+
+# Зеленый (Мягкий неоновый маджента-тон)
+color2  #e6004c
+color10 #ff4d88
+
+# Желтый
+color3  #a3002e
+color11 #c70039
+
+# Синий
+color4  #ff0055
+color12 #ff3377
+
+# Пурпурный
+color5  #eb0043
+color13 #ff4d88
+
+# Циан
+color6  #ff6699
+color14 #ff80aa
+
+# Белый (Чистый контрастный цвет, чтобы логи не сливались в кашу)
+color7  #ffffff
+color15 #eeddff
+
+cursor_trail 3
+
+# BEGIN_KITTY_FONTS
+font_family      family="Terminess Nerd Font"
+bold_font        auto
+italic_font      auto
+bold_italic_font auto
+# END_KITTY_FONTS
+

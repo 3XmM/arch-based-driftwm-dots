@@ -1,0 +1,168 @@
+# driftwm — personal config (symlink to ~/.config/driftwm/config.toml)
+
+autostart = ["qs -c noctalia-shell -d","xwayland-satellite"]
+
+focus_follows_mouse = true
+window_placement = "auto"
+
+[env]
+QT_QPA_PLATFORMTHEME = "qt6ct"
+
+[snap]
+same_edge = true
+edge_center = true
+
+[input.keyboard]
+layout = "us,ru"
+options = "grp:alt_shift_toggle"
+
+[zoom]
+reset_on_new_window = false
+
+[cursor]
+theme = "capitaine-cursors"
+
+[decorations]
+bg_color = "#272E33"
+fg_color = "#D3C6AA"
+default_mode = "minimal"
+border_color = "#05070a"            # Неактивные окна почти сливаются с фоном
+border_color_focused = "#070a0f" 
+border_width = 7
+
+[background]
+type = "wallpaper"
+path = "~/.config/driftwm/burgundy1.png"
+
+[output.outline]
+color="#FDF6E3"
+
+[mouse]
+decoration_resize_snapped = true
+decoration_fit_snapped = true
+
+
+[keybindings]
+"mod+shift+c" = "exec code"
+"mod+d"   = "spawn qs ipc -c noctalia-shell call launcher toggle"
+"mod+n"   = "spawn qs ipc -c noctalia-shell call notifications toggleHistory"
+"mod+v"   = "spawn qs ipc -c noctalia-shell call launcher clipboard"
+"mod+tab" = "spawn qs ipc -c noctalia-shell call sessionMenu toggle"
+"mod+return" = "exec kitty"
+"mod+b" = "exec firefox"
+"mod+e" = "exec nautilus"
+"mod+z" = "exec zeditor"
+"mod+shift+t" = "exec Telegram"
+"mod+shift+g" = "spawn ~/.config/driftwm/scripts/discord-x11.sh"
+"mod+q" = "close-window"
+"mod+f" = "toggle-fullscreen"
+"mod+a" = "home-toggle"
+"mod+w" = "zoom-to-fit"
+"mod+shift+w" = "spawn ~/.config/driftwm/scripts/wallpaper-cycle.sh"
+"mod+ctrl+w" = "spawn ~/.config/driftwm/scripts/photo-wallpaper.sh select fill"
+"mod+c" = "center-window"
+"mod+shift+d" = "spawn ~/.config/driftwm/scripts/theme-toggle.sh"
+"mod+shift+i" = "spawn ~/.config/driftwm/scripts/idle-toggle.sh"
+"mod+shift+p" = "spawn ~/.config/driftwm/scripts/power-menu.sh"
+"mod+l" = "spawn ~/.config/driftwm/scripts/lock.sh"
+"mod+alt+l" = "spawn ~/.config/driftwm/scripts/lock.sh"
+"XF86AudioRaiseVolume" = "spawn wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+"
+"XF86AudioLowerVolume" = "spawn wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"
+"XF86AudioMute" = "spawn wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
+"XF86AudioMicMute" = "spawn wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"
+"XF86AudioNext" = "spawn playerctl next"
+"XF86AudioPrev" = "spawn playerctl previous"
+"XF86AudioPlay" = "spawn playerctl play-pause"
+"XF86AudioPause" = "spawn playerctl play-pause"
+"XF86AudioStop" = "spawn playerctl stop"
+"XF86MonBrightnessUp" = "spawn brightnessctl set +5%"
+"XF86MonBrightnessDown" = "spawn brightnessctl set 5%-"
+"mod+s" = "exec ~/.config/driftwm/scripts/window-search.sh"
+"mod+shift+r" = "spawn ~/.config/driftwm/scripts/record-start.sh"
+"mod+shift+s" = "spawn ~/.config/driftwm/scripts/record-stop.sh"
+"mod+m" = "fit-window-snapped"
+"mod+shift+m" = "fit-window"
+"mod+ctrl+shift+q" = "quit"
+"ctrl+shift+1" = "spawn ~/.config/driftwm/scripts/screenshot.sh area"
+"ctrl+shift+2" = "spawn ~/.config/driftwm/scripts/screenshot.sh screen"
+"ctrl+shift+3" = "spawn ~/.config/driftwm/scripts/screenshot.sh window"
+"Print" = "spawn ~/.config/driftwm/scripts/screenshot.sh screen"
+
+
+[gestures.on-window]
+"alt+3-finger-swipe" = "resize-window-snapped"
+"alt+shift+3-finger-swipe" = "resize-window"
+
+[[outputs]]
+name = "DP-1"
+mode = "1920x1080@144"
+scale = 1.0
+
+[effects]
+blur_radius = 7
+blur_strength = 1.45
+
+# Dashboard widgets — positioned around origin for home view (1920x1080)
+
+# Shared defaults for all drift-* widgets (sticky-on flags, last-wins scalars)
+[[window_rules]]
+app_id = "drift-*"
+widget = true
+decoration = "none"
+
+[[window_rules]]
+app_id = "drift-clock"
+position = [-93, 205]
+
+[[window_rules]]
+app_id = "drift-stats"
+position = [-93, 0]
+
+[[window_rules]]
+app_id = "drift-canvas"
+position = [-129, -185]
+
+[[window_rules]]
+app_id = "drift-layout"
+position = [42, -185]
+
+[[window_rules]]
+app_id = "drift-calendar"
+position = [186, 0]
+
+[[window_rules]]
+app_id = "drift-weather"
+position = [186, 205]
+
+[[window_rules]]
+app_id = "drift-notif"
+position = [190, -185]
+
+[[window_rules]]
+app_id = "drift-power"
+position = [274, -259]
+
+[[window_rules]]
+app_id = "drift-power-menu"
+position = [274, -370]
+decoration = "none"
+
+# Cosmic settings: hide winit window helper and apply fixed window size
+[[window_rules]]
+title = "winit window"
+widget = true
+
+[[window_rules]]
+app_id = "com.system76.CosmicSettings"
+size=[500, 725]
+
+# Telegram: no compositor titlebar.
+[[window_rules]]
+app_id = "org.telegram.desktop"
+decoration = "minimal"
+
+
+[[window_rules]]
+app_id = "kitty"
+opacity = 0.85
+blur = true

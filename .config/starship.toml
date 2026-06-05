@@ -1,0 +1,197 @@
+# ---------------------------------------
+# cybr-starship    lucid theme for starship
+# Project:         https://github.com/cybrcore/cybr-starship
+# Author:          scherrer-txt   |   License:     GPL-3.0
+# Source:          ~/.config/starship/cybrcore.toml
+# Modified:        Burgundy Cyberpunk Edition
+# ---------------------------------------
+
+scan_timeout = 100
+
+format = """
+$username\
+[](fg:no1 bg:re2)\
+$shell\
+[](fg:re2 bg:re0)\
+$directory\
+[](fg:re0)\
+$git_branch\
+$git_status\
+$c\
+$elixir\
+$elm\
+$golang\
+$gradle\
+$haskell\
+$java\
+$julia\
+$nim\
+$rust\
+$scala\
+$docker_context\
+$time\
+$line_break$character
+"""
+
+palette = "cybr_ship"
+
+[username]
+show_always = true
+style_user = "bg:no1 fg:re0"
+format = '[ $user ]($style)'
+disabled = false
+
+[shell]
+style = "bg:re2 fg:re0"
+format = '[ $indicator ]($style)'
+disabled = false
+
+[directory]
+style = "fg:re2 bg:re0"
+format = "[ $path ](bold $style)"
+truncation_length = 3
+truncation_symbol = "…/"
+
+[line_break]
+disabled = false
+
+[jobs]
+disabled = true
+
+[character]
+success_symbol = "[❯ ](fg:re0)"
+error_symbol = "[](fg:re0)"
+vicmd_symbol = "[  ](fg:ye0)"
+format = "$symbol"
+
+[time]
+disabled = false
+time_format = "%R" # Hour:Minute Format
+style = "fg:cy0 bg:cy2"
+format = '[](fg:cy2)[ $time ]($style)[](fg:cy2)'
+
+[custom.time_arrow]
+disabled = false
+command = 'echo -n ""'
+when = 'true'
+style = "fg:cy2"
+format = '[ $output]($style)'
+
+[custom.transient_time]
+disabled = false
+command = 'date "+%H:%M"'
+when = 'true'
+style = "fg:cy0 bg:cy2"
+format = '[ $output ]($style)'
+
+[palettes.cybr_ship]
+# Базовые темные подложки (Тёмно-бордовый и почти черный)
+no0 = "#100005"
+no1 = "#25000a"
+
+# Основной акцентный неон (Яркий бордовый / Маджента)
+re0 = "#ff0055"
+re2 = "#400012"
+
+# Вспомогательные элементы (Переведены в гармоничные бордовые градиенты)
+gr0 = "#ff3377"
+gr2 = "#5e001a"
+
+ye0 = "#ff4d88"
+ye2 = "#3b0010"
+
+bl0 = "#ff0055"
+bl2 = "#400012"
+
+pu0 = "#e6004c"
+pu2 = "#330011"
+
+cy0 = "#ff6699"
+cy2 = "#4d001a"
+
+wh0 = "#ff99bb"
+wh2 = "#26000d"
+
+me0 = "#ff1a66"
+me2 = "#3a0013"
+
+or0 = "#ff0055"
+or2 = "#400012"
+
+[git_branch]
+symbol = ""
+style = "bg:pu2 fg:pu0"
+format = "[](fg:pu2)[ $symbol $branch ]($style)[](fg:pu2)"
+
+[git_status]
+style = "bg:pu0 fg:pu2"   # hlavní blok
+format = "[](fg:pu0)[ $all_status$ahead_behind ]($style)[](fg:pu0)"
+
+[c]
+symbol = ""
+style = "bg:bl2 fg:bl0"
+format = "[](fg:pu2 bg:bl2)[ $symbol ($version) ]($style)"
+
+[cpp]
+symbol = ""
+style = "bg:bl2 fg:bl0"
+format = "[ $symbol ($version) ]($style)"
+
+[elm]
+symbol = ""
+style = "bg:bl2 fg:bl0"
+format = "[ $symbol ($version) ]($style)"
+
+[golang]
+symbol = ""
+style = "bg:bl2 fg:bl0"
+format = "[ $symbol ($version) ]($style)"
+
+[gradle]
+style = "bg:cy2 fg:cy0"
+format = "[](fg:bl2 bg:cy2)[ $symbol ($version) ]($style)"
+
+[julia]
+symbol = ""
+style = "bg:cy2 fg:cy0"
+format = "[ $symbol ($version) ]($style)"
+
+[java]
+symbol = ""
+style = "bg:or2 fg:or0"
+format = "[](fg:cy2 bg:or2)[ $symbol ($version) ]($style)"
+
+[rust]
+symbol = ""
+style = "bg:or2 fg:or0"
+format = "[ $symbol ($version) ]($style)"
+
+[python]
+symbol = ""
+style = "bg:ye2 fg:ye0"
+format = "[](fg:or2 bg:ye2)[ $symbol ($version) ]($style)"
+
+[nim]
+symbol = "  "
+style = "bg:ye2 fg:ye0"
+format = "[ $symbol ($version) ]($style)"
+
+[haskell]
+symbol = ""
+style = "bg:pu2 fg:pu0"
+format = "[](fg:ye2 bg:pu2)[ $symbol ($version) ]($style)"
+
+[elixir]
+symbol = ""
+style = "bg:pu2 fg:pu0"
+format = "[ $symbol ($version) ]($style)"
+
+[scala]
+symbol = ""
+style = "bg:re2 fg:re0"
+format = "[](fg:pu2 bg:re2)[ $symbol ($version) ]($style)"
+
+[docker_context]
+symbol = ""
+style = "bg:bl2 fg:bl0"
+format = "[](fg:re2 bg:bl2)[ $symbol $context ]($style)"
