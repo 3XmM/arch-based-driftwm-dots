@@ -13,7 +13,7 @@ DriftWM is a trackpad-first infinite canvas Wayland compositor, and Noctalia She
 
 ## Pre-requisites
 
-Before executing the installer, ensure that you have an active AUR helper installed. This script natively uses `yay` to handle both official repository packages and AUR packages.(start install.sh in TTY
+Before executing the installer, ensure that you have an active AUR helper installed. This script natively uses `yay` to handle both official repository packages and AUR packages.(start install.sh in TTY)
 
 ## Installation
 
